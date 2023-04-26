@@ -1,0 +1,28 @@
+main{
+   width: auto;
+   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+table {
+  margin: 0 auto;
+  max-width: 70%;
+
+}
+
+tbody tr th{
+  border: 1px solid black;
+  padding: 4px;
+
+
+  & input{
+    text-align: center;
+    width: 100%;
+    border: none;
+   outline: none;
+  }
+}
+
