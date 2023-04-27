@@ -1,31 +1,38 @@
 import './style.scss'
 import React, { useEffect, useState } from 'react'
 
-type TableStoresProps = {
+
+type TableStoresPropsType = {
+  isLoading: boolean
+  stores: TableStoresType[]
+  error: boolean | null
+}
+
+type TableStoresType = {
   store: {
     id: number
     name: string
   }
-  months: Month[]
+  months: MonthType[]
 }
 
-type Month = {
+type MonthType = {
   id: string
   name: string
   value: number
 }
 
-const TableStores: React.FC<any> = (props) => {
-const [stores, setStores] = useState<TableStoresProps[]>(props.stores)
-const allMonths = stores.reduce(
-  (acc: Month[], curr: TableStoresProps) => [...acc, ...curr.months],
-  []
-)
+const TableStores: React.FC<TableStoresPropsType> = (props) => {
+  const [stores, setStores] = useState<TableStoresType[]>(props.stores)
+  const allMonths = stores.reduce(
+    (acc: MonthType[], curr: TableStoresType) => [...acc, ...curr.months],
+    []
+  )
   useEffect(() => {
     setStores(props.stores)
   }, [props.stores])
 
-  const StoreTotal = (arr: Month[]) => {
+  const StoreTotal = (arr: MonthType[]) => {
     const result = arr.reduce((acc, curr) => acc + curr.value, 0)
     return result
   }
@@ -50,7 +57,7 @@ const allMonths = stores.reduce(
     setStoreTotals(newStoreTotals)
   }
 
-  const MonthTotal = (stores: TableStoresProps[], monthIndex: number) => {
+  const MonthTotal = (stores: TableStoresType[], monthIndex: number) => {
     const result = stores.reduce(
       (acc, curr) => acc + curr.months[monthIndex].value,
       0
@@ -118,7 +125,8 @@ const allMonths = stores.reduce(
         <span>идет загрузка...</span>
       )}
     </main>
-  )}
+  )
+}
 
 export default TableStores
 
