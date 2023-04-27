@@ -1,7 +1,6 @@
 import './style.scss'
 import React, { useEffect, useState } from 'react'
 
-
 type TableStoresPropsType = {
   isLoading: boolean
   stores: TableStoresType[]
@@ -129,4 +128,3 @@ const TableStores: React.FC<TableStoresPropsType> = (props) => {
 }
 
 export default TableStores
-
