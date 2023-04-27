@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "https://arsen2003.github.io/react-table-task/static/css/main.d312a465.css",
+    "main.js": "https://arsen2003.github.io/react-table-task/static/js/main.15c8689b.js",
+    "index.html": "https://arsen2003.github.io/react-table-task/index.html",
+    "main.d312a465.css.map": "https://arsen2003.github.io/react-table-task/static/css/main.d312a465.css.map",
+    "main.15c8689b.js.map": "https://arsen2003.github.io/react-table-task/static/js/main.15c8689b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d312a465.css",
+    "static/js/main.15c8689b.js"
+  ]
+}
